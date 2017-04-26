@@ -25,7 +25,12 @@
               <router-link to="/vision" tag="li">
                 <a>Vision</a>
               </router-link>
-
+              <router-link to="/login" tag="li">
+                <a>Login</a>
+              </router-link>
+              <router-link to="/register" tag="li">
+                <a>Register</a>
+              </router-link>
             </ul>
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->

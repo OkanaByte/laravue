@@ -8,6 +8,10 @@ use Illuminate\Http\Request;
 
 class NotebookController extends Controller
 {
+    function __construct()
+    {
+        $this->middleware('jwt.auth')->only('index');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -78,7 +82,9 @@ class NotebookController extends Controller
      */
     public function update(Request $request, Notebook $notebook)
     {
-        //
+        $notebook->update($request->all());
+
+        return "success";
     }
 
     /**
@@ -89,6 +95,8 @@ class NotebookController extends Controller
      */
     public function destroy(Notebook $notebook)
     {
-        //
+        $notebook->delete();
+
+        return "deleted";
     }
 }
